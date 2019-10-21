@@ -6,7 +6,9 @@
   <%= link_to "削除", todo_path(todo), method: :delete %>
   <ul>
     <% todo.tasks.each do |task| %>  
-      <li><%= task.content %></li>
+      <li>
+        <%= task.deleted? ? "(削除済み)" : "" %><%= task.content %>
+      </li>
     <% end %>
   </ul>
 <% end %>
