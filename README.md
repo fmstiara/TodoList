@@ -3,15 +3,12 @@
 - [cocoon](https://github.com/nathanvda/cocoon)
 - [paranoia](https://github.com/rubysherpas/paranoia)
 - [ransacl](https://github.com/activerecord-hackery/ransack)
-<<<<<<< HEAD
-=======
 
 # branch情報
 - [master](https://github.com/fmstiara/TodoList/tree/master)
   - gemを試すのに必要な内容を下準備したもの
 - [goal](https://github.com/fmstiara/TodoList/tree/goal)
   - コード完成形
->>>>>>> master
 
 # やること
 - Todo(親) < Task(子)をまとめて保存する
