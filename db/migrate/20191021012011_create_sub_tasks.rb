@@ -3,7 +3,7 @@ class CreateSubTasks < ActiveRecord::Migration[5.2]
     create_table :sub_tasks do |t|
       t.text :content
       t.references :task, foreign_key: true
-
+      t.datetime :deleted_at
       t.timestamps
     end
   end
