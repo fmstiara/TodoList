@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @todo.title %>
+</p>
+
+<ul>
+  <% @todo.tasks.each do |task| %>  
+    <li>
+      <%= task.content %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %>

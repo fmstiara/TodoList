@@ -1,0 +1,27 @@
+<%= form_with(model: sub_task, local: true) do |form| %>
+  <% if sub_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sub_task.errors.count, "error") %> prohibited this sub_task from being saved:</h2>
+
+      <ul>
+      <% sub_task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task_id %>
+    <%= form.text_field :task_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

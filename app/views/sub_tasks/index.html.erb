@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sub Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Task</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_tasks.each do |sub_task| %>
+      <tr>
+        <td><%= sub_task.content %></td>
+        <td><%= sub_task.task %></td>
+        <td><%= link_to 'Show', sub_task %></td>
+        <td><%= link_to 'Edit', edit_sub_task_path(sub_task) %></td>
+        <td><%= link_to 'Destroy', sub_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub Task', new_sub_task_path %>

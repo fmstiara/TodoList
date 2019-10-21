@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<% @todos.each do |todo| %>
+  <h5>Title: <%= link_to todo.title, todo_path(todo) %></h5>
+
+  <ul>
+    <% todo.tasks.each do |task| %>  
+      <li><%= task.content %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'New Todo', new_todo_path %>
