@@ -15,6 +15,7 @@ class TodosController < ApplicationController
   # GET /todos/new
   def new
     @todo = Todo.new
+    @todo.tasks.new
   end
 
   # GET /todos/1/edit
@@ -69,6 +70,6 @@ class TodosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_params
-      params.require(:todo).permit(:title)
+      params.require(:todo).permit(:title, tasks_attributes: [:id, :content, :_destroy])
     end
 end
