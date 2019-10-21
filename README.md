@@ -104,16 +104,19 @@ Todo(親) ＜ Task(子) < SubTask(孫)
     end
   ```
   - 論理削除した値を取得するときはwith_deleatedの記述を加える
-    ```ruby
-      #models/todo.rb
-      class Todo < ApplicationRecord
-        acts_as_paranoid
-        has_many :tasks, -> { with_deleted }
-        accepts_nested_attributes_for :tasks, allow_destroy: true
-      end
-    ```
-      - この例だとtodo.tasksとしたとき、あるtodoに紐付いたすべてのtasksを取得する記述になる
-      - todoの一覧表示で削除済みのものも表示される
+  ```ruby
+    # 例
+    Todo.with_deletd
+  ```
+  - has_manyやbelongs_toにwith_deletedを組み込むことができる。
+  ```ruby
+    #models/todo.rb
+    class Todo < ApplicationRecord
+      acts_as_paranoid
+      has_many :tasks, -> { with_deleted }
+      accepts_nested_attributes_for :tasks, allow_destroy: true
+    end
+  ```
 
 # ransack
 - controller
