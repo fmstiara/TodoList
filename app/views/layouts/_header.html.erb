@@ -1,2 +1,5 @@
-<%= search_form_field @q do |f| %>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_or_tasks_content_cont, "ToDo検索" %>
+  <%= f.search_field :title_or_tasks_content_cont %>
+  <%= f.submit "検索" %>
 <% end %>
