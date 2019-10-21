@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <% @todos.each do |todo| %>
-  <h5>Title: <%= link_to todo.title, todo_path(todo) %></h5>
-
+  <h3>Title: <%= link_to todo.title, todo_path(todo) %></h3>
+  <%= link_to "編集", edit_todo_path(todo) %>
+  <%= link_to "削除", todo_path(todo), method: :delete %>
   <ul>
     <% todo.tasks.each do |task| %>  
       <li><%= task.content %></li>
