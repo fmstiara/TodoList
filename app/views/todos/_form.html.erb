@@ -16,6 +16,14 @@
     <%= form.text_field :title %>
   </div>
 
+  <%= form.fields_for :tasks do |tform| %>
+    <%= render 'task_fields', f: tform %>
+  <% end %>
+
+  <div class="links">
+    <%= link_to_add_association "Task追加", form, :tasks %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

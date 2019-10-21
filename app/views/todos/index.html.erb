@@ -2,7 +2,8 @@
 
 <% @todos.each do |todo| %>
   <h5>Title: <%= link_to todo.title, todo_path(todo) %></h5>
-
+  <h5><%= link_to "編集", edit_todo_path(todo) %></h5>
+  <h5><%= link_to "削除", todo_path(todo), method: :delete %></h5>
   <ul>
     <% todo.tasks.each do |task| %>  
       <li><%= task.content %></li>
